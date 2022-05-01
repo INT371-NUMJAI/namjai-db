@@ -1,3 +1,29 @@
+CREATE TABLE roles (
+	role_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	role_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE resources (
+	resources_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	file_name VARCHAR ( 50 ) NOT NULL,
+    path_name VARCHAR ( 255 )
+);
+
+CREATE TABLE categories (
+	category_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	category_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE fdn_status (
+	status_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	status_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE target_categories (
+	target_categories_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	target_categories_name VARCHAR ( 255 ) NOT NULL
+ );
+ 
 CREATE TABLE fdn_categories (
   fdn_uuid VARCHAR (50)  NOT NULL,
   category_uuid VARCHAR (50) NOT NULL,
@@ -14,14 +40,14 @@ CREATE TABLE volunteers_projects (
 	location VARCHAR (255) NOT NULL,
 	daration TIMESTAMP NOT NULL,
 	people_needed INTEGER NOT NULL,
-    people_register INTEGER NOT NULL,
-    description  TEXT NOT NULL,
-    duty TEXT NOT NULL,
-    qualify TEXT NOT NULL,
-    contact_detail TEXT NOT NULL,
-    activity_type VARCHAR (255),
-    fdn_uuid VARCHAR (50)  NOT NULL,
-    target_category_uuid VARCHAR (50)  NOT NULL,
+  people_register INTEGER NOT NULL,
+  description  TEXT NOT NULL,
+  duty TEXT NOT NULL,
+  qualify TEXT NOT NULL,
+  contact_detail TEXT NOT NULL,
+  activity_type VARCHAR (255),
+  fdn_uuid VARCHAR (50)  NOT NULL,
+  target_category_uuid VARCHAR (50)  NOT NULL,
      FOREIGN KEY (fdn_uuid)
       REFERENCES foundations (fdn_uuid),
      FOREIGN KEY (target_category_uuid)
