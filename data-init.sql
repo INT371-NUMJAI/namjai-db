@@ -1,3 +1,29 @@
+CREATE TABLE roles (
+	role_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	role_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE resources (
+	resources_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	file_name VARCHAR ( 50 ) NOT NULL,
+    path_name VARCHAR ( 255 )
+);
+
+CREATE TABLE categories (
+	category_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	category_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE fdn_status (
+	status_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	status_name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE target_categories (
+	target_categories_uuid VARCHAR ( 50 ) PRIMARY KEY,
+	target_categories_name VARCHAR ( 255 ) NOT NULL
+ );
+ 
 CREATE TABLE users (
 	user_uuid VARCHAR ( 50 ) PRIMARY KEY,
 	username VARCHAR ( 50 ) UNIQUE NOT NULL,
@@ -59,33 +85,8 @@ CREATE TABLE fdn_projects (
     goal INT NOT NULL,
     FOREIGN KEY (fdn_uuid)
         REFERENCES foundations (fdn_uuid)
-=======
-CREATE TABLE roles (
-	role_uuid VARCHAR ( 50 ) PRIMARY KEY,
-	role_name VARCHAR ( 50 ) NOT NULL
 );
 
-CREATE TABLE resources (
-	resources_uuid VARCHAR ( 50 ) PRIMARY KEY,
-	file_name VARCHAR ( 50 ) NOT NULL,
-    path_name VARCHAR ( 255 )
-);
-
-CREATE TABLE categories (
-	category_uuid VARCHAR ( 50 ) PRIMARY KEY,
-	category_name VARCHAR ( 50 ) NOT NULL
-);
-
-CREATE TABLE fdn_status (
-	status_uuid VARCHAR ( 50 ) PRIMARY KEY,
-	status_name VARCHAR ( 50 ) NOT NULL
-);
-
-CREATE TABLE target_categories (
-	target_categories_uuid VARCHAR ( 50 ) PRIMARY KEY,
-	target_categories_name VARCHAR ( 255 ) NOT NULL
- );
- 
 CREATE TABLE fdn_categories (
   fdn_uuid VARCHAR (50)  NOT NULL,
   category_uuid VARCHAR (50) NOT NULL,
