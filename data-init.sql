@@ -172,3 +172,9 @@ CREATE TABLE IF NOT EXISTS volunteer_project_target_categories (
   FOREIGN KEY (target_category_uuid)
       REFERENCES target_categories (target_category_uuid)
 );
+
+INSERT INTO "roles" ("role_id", "role_name") VALUES ('1', 'ROLE_ADMIN');
+INSERT INTO "roles" ("role_id", "role_name") VALUES ('2', 'ROLE_USER');
+INSERT INTO "roles" ("role_id", "role_name") VALUES ('3', 'ROLE_FDN');
+INSERT INTO "roles" ("role_id", "role_name") VALUES ('4', 'ROLE_FDN_STAFF');
+
