@@ -99,14 +99,14 @@ CREATE TABLE IF NOT EXISTS  fdn_categories (
   PRIMARY KEY (fdn_uuid, category_id),
   FOREIGN KEY (fdn_uuid)
       REFERENCES foundations (fdn_uuid),
-  FOREIGN KEY (category_uuid)
+  FOREIGN KEY (category_id)
       REFERENCES categories (category_id)
 );
 
 CREATE TABLE IF NOT EXISTS  volunteers_projects (
 	volunteer_projects_uuid VARCHAR (50) PRIMARY KEY,
 	vp_name VARCHAR (255)  NOT NULL,
-	location VARCHAR TEXT NOT NULL,
+	location  TEXT NOT NULL,
 	duration TIMESTAMP NOT NULL,
 	people_needed INTEGER NOT NULL,
   description  TEXT NOT NULL,
