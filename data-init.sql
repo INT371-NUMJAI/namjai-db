@@ -20,15 +20,38 @@ CREATE TABLE IF NOT EXISTS target_categories (
 	target_category_name VARCHAR (255) NOT NULL
  );
  
+CREATE TABLE IF NOT EXISTS  foundations (
+	fdn_uuid VARCHAR (50) PRIMARY KEY,
+	name VARCHAR (255) UNIQUE NOT NULL,
+    address_no VARCHAR (255) NOT NULL,
+    street_no VARCHAR (50) NOT NULL,
+    street_name VARCHAR (255) NOT NULL,
+    sub_district VARCHAR (255) NOT NULL,
+    district VARCHAR (255) NOT NULL,
+    province VARCHAR (255) NOT NULL,
+    postalcode VARCHAR (50)NOT NULL,
+    founder_name VARCHAR (255) NOT NULL,
+    fdn_detail TEXT NOT NULL,
+    fdn_size VARCHAR (255) NOT NULL,
+    establish_date VARCHAR (50) NOT NULL,
+    email VARCHAR (255) UNIQUE NOT NULL,
+    contact_num VARCHAR ( 20 ) NOT NULL,
+    status VARCHAR (50) NOT NULL,
+    resource_uuid VARCHAR (50) ,
+    FOREIGN KEY (resource_uuid)
+        REFERENCES resources (resource_uuid)
+
+);
+
 CREATE TABLE IF NOT EXISTS users (
 	user_uuid VARCHAR (50) PRIMARY KEY,
-	username VARCHAR (255) UNIQUE NOT NULL,
    email VARCHAR (255) UNIQUE NOT NULL,
    fname VARCHAR (255) NOT NULL,
    lname VARCHAR (255) NOT NULL, 
 	password VARCHAR (255) NOT NULL,
    role_id VARCHAR (50) NOT NULL,
    create_date TIMESTAMP NOT NULL,
+   status VARCHAR(100) NOT NULL,
    FOREIGN KEY (role_id)
        REFERENCES roles (role_id)
 );
@@ -46,27 +69,7 @@ CREATE TABLE IF NOT EXISTS user_posts (
         REFERENCES resources (resource_uuid)
 );
 
-CREATE TABLE IF NOT EXISTS  foundations (
-	fdn_uuid VARCHAR (50) PRIMARY KEY,
-	name VARCHAR (255) UNIQUE NOT NULL,
-    address_no VARCHAR (255) NOT NULL,
-    street_no VARCHAR (50) NOT NULL,
-    street_name VARCHAR (255) NOT NULL,
-    sub_district VARCHAR (255) NOT NULL,
-    district VARCHAR (255) NOT NULL,
-    province VARCHAR (255) NOT NULL,
-    postalcode VARCHAR (50)NOT NULL,
-    founder_name VARCHAR (255) NOT NULL,
-    fdn_detail TEXT NOT NULL,
-    fdn_size VARCHAR (255) NOT NULL,
-    establish_date VARCHAR (50) NOT NULL,
-    email VARCHAR (50) UNIQUE NOT NULL,
-    contact_num VARCHAR ( 20 ) NOT NULL,
-    status VARCHAR (50) NOT NULL,
-    resource_uuid VARCHAR (50) NOT NULL,
-    FOREIGN KEY (resource_uuid)
-        REFERENCES resources (resource_uuid)
-);
+
 
 CREATE TABLE IF NOT EXISTs  fdns_resources_documents (
 	fdn_resources_doc_uuid VARCHAR (50) PRIMARY KEY,
