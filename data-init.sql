@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS users (
    email VARCHAR (255) UNIQUE NOT NULL,
    fname VARCHAR (255) NOT NULL,
    lname VARCHAR (255) NOT NULL, 
+   userName VARCHAR (255) NOT NULL, 
 	password VARCHAR (255) NOT NULL,
    role_id VARCHAR (50) NOT NULL,
    create_date TIMESTAMP NOT NULL,
