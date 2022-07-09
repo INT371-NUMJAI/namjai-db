@@ -23,9 +23,7 @@ CREATE TABLE IF NOT EXISTS target_categories (
 CREATE TABLE IF NOT EXISTS  foundations (
 	fdn_uuid VARCHAR (50) PRIMARY KEY,
 	name VARCHAR (255) UNIQUE NOT NULL,
-    address_no VARCHAR (255) NOT NULL,
-    street_no VARCHAR (50) NOT NULL,
-    street_name VARCHAR (255) NOT NULL,
+    address_detail TEXT NOT NULL,
     sub_district VARCHAR (255) NOT NULL,
     district VARCHAR (255) NOT NULL,
     province VARCHAR (255) NOT NULL,
