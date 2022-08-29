@@ -6,13 +6,13 @@ networks:
 services:
   db:
     image: postgres:10-alpine
-    container_name: db-namjai
+    container_name: db_namjai
     restart: always
     volumes:
       - ./postgress:/var/lib/postgress
       - ./data-init.sql:/data-init.sql
     ports:
-      - 5434:5432
+      - 5432:5432
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=toor
