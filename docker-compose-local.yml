@@ -10,7 +10,7 @@ services:
     restart: always
     volumes:
       - ./postgress:/var/lib/postgress
-      - ./data-init.sql:/data-init.sql
+      - ./db_backup.sql:/db_backup.sql
     ports:
       - 5432:5432
     environment:
